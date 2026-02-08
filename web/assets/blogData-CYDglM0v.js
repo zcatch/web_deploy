@@ -1,0 +1,32 @@
+const e=[{value:"frontend",label:"前端开发"},{value:"backend",label:"后端架构"},{value:"devops",label:"服务器与运维"},{value:"design",label:"UI/UX 设计"},{value:"life",label:"生活随笔"}],t=[{id:1,title:"Vue 3 组合式 API 深度解析",excerpt:"探索 Vue 3 Composition API 的核心概念，以及它如何改变我们构建大型应用的方式。",date:"2023-10-15",category:"frontend",tags:["Vue.js","JS"],gradient:"linear-gradient(135deg, #f472b6 0%, #4f46e5 100%)",author:"AIZO",readTime:12,content:`<h2>Vue 3 的变革</h2><p>Vue 3 的 Composition API 是对 Options API 的巨大补充。它允许开发者将逻辑相关的代码组织在一起，而不是散落在 data, methods, computed 等不同的选项中。</p><h3>为什么使用 setup？</h3><p>setup 函数是 Composition API 的入口点。在这里，我们可以使用 ref 和 reactive 来定义响应式状态，使用 watch 和 computed 来处理副作用和计算属性。</p><pre>import { ref, onMounted } from 'vue';
+
+export default {
+  setup() {
+    const count = ref(0);
+    onMounted(() => console.log('Mounted!'));
+    return { count };
+  }
+}</pre><blockquote>“Composition API 并不是要取代 Options API，而是为处理复杂业务逻辑提供了更好的工具。”</blockquote>`},{id:2,title:"WebGL 与 Three.js 入门指南",excerpt:"开启 3D 网页开发之旅。本文将带你了解 WebGL 的基础知识，并使用 Three.js 创建你的第一个 3D 场景。",date:"2023-09-22",category:"design",tags:["Three.js","3D"],gradient:"linear-gradient(135deg, #db2777 0%, #7c3aed 100%)",author:"AIZO",readTime:10,content:`<h2>迈向 3D 世界</h2><p>WebGL 是浏览器内置的 3D 图形 API，但它的 API 非常底层且复杂。Three.js 封装了这些复杂性，让我们能用面向对象的方式操作 3D 场景。</p><h3>核心原件</h3><ul><li>场景 (Scene)：你的宇宙</li><li>相机 (Camera)：你的眼睛</li><li>渲染器 (Renderer)：画布</li><li>几何体 (Geometry) 与 材质 (Material)</li></ul><pre>const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();</pre>`},{id:3,title:"Nginx 高级反向代理配置",excerpt:"深入理解 Nginx 核心功能。如何配置负载均衡策略？动静分离又是如何提升性能的？",date:"2023-11-05",category:"devops",tags:["Nginx","运维"],gradient:"linear-gradient(135deg, #10b981 0%, #059669 100%)",author:"AIZO",readTime:14,content:`<h2>高性能代理</h2><p>Nginx 以其高性能和低内存占用著称。作为反向代理，它可以有效地隐藏后端架构，并提供额外的安全层。</p><h3>负载均衡策略</h3><p>通过 upstream 模块，我们可以轻松实现流量分发：</p><ul><li>轮询 (Round Robin)</li><li>加权轮询 (Weight)</li><li>IP Hash</li><li>Least Conn</li></ul><pre>upstream myapp {
+  server 192.168.1.10:8080 weight=3;
+  server 192.168.1.11:8080;
+}</pre>`},{id:4,title:"Linux 常用命令大汇总",excerpt:"针对开发者的 Linux 命令速查手册。包含文件操作、进程管理、网络监控等高频命令详解。",date:"2023-11-01",category:"devops",tags:["Linux","Shell"],gradient:"linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",author:"AIZO",readTime:20,content:"<h2>终端效率手册</h2><p>熟练使用 Linux 命令行是开发者进阶的必经之路。本文汇总了运维过程中最常用的命令。</p><h3>进程分析</h3><p>使用 <code>top</code> 或 <code>htop</code> 实时监控 CPU 和内存占用。使用 <code>ps -ef | grep node</code> 查找特定服务的 PID。</p><blockquote>“Shell 是与系统对话的最快方式。”</blockquote>"},{id:5,title:"现代 CSS 布局技巧：Grid",excerpt:"重新审视 CSS 布局系统。如何灵活运用 Grid 创建响应式、复杂的网页布局？",date:"2023-08-10",category:"frontend",tags:["CSS","Grid"],gradient:"linear-gradient(135deg, #f59e0b 0%, #ea580c 100%)",author:"AIZO",readTime:15,content:`<h2>网格布局的艺术</h2><p>CSS Grid 是 CSS 中最强大的布局系统。与 Flexbox 不同，Grid 是二维的，可以同时处理行和列。</p><h3>核心概念</h3><p>通过 <code>grid-template-columns</code> 和 <code>grid-template-rows</code> 定义容器结构。使用 <code>fr</code> 单位实现完美的比例分配。</p><pre>.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}</pre>`},{id:6,title:"Node.js 内存管理与优化",excerpt:"基于 Node.js 构建高并发服务。探讨事件循环、内存堆栈分配以及内存泄漏排查技巧。",date:"2023-07-05",category:"backend",tags:["Node.js","后端"],gradient:"linear-gradient(135deg, #10b981 0%, #3b82f6 100%)",author:"AIZO",readTime:18,content:"<h2>透视 V8 引擎</h2><p>Node.js 运行在 V8 引擎之上。了解 V8 的垃圾回收机制（GC）对于编写高性能应用至关重要。</p><h3>内存泄漏常见原因</h3><ul><li>全局变量未释放</li><li>被遗忘的定时器或回调</li><li>闭包导致的意外引用</li></ul><p>通过 <code>process.memoryUsage()</code> 可以实时观察内存占用情况。</p>"},{id:7,title:"Docker 容器化部署实战",excerpt:"从 Dockerfile 编写到多容器编排。掌握容器化技术，彻底解决开发环境一致性难题。",date:"2023-05-30",category:"backend",tags:["Docker","容器"],gradient:"linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)",author:"AIZO",readTime:22,content:`<h2>构建你的首个镜像</h2><p>Docker 让应用的分发和部署变得标准化。通过 Dockerfile，我们可以定义一个完全隔离的运行环境。</p><h3>Dockerfile 最佳实践</h3><pre>FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]</pre><p>使用 alpine 基础镜像可以极大地减小镜像体积。</p>`},{id:8,title:"Nginx CORS 跨域方案全解",excerpt:"彻底终结跨域噩梦。在 Nginx 层面实现精细化的请求分层管理。",date:"2023-11-28",category:"devops",tags:["CORS","网络"],gradient:"linear-gradient(135deg, #84cc16 0%, #65a30d 100%)",author:"AIZO",readTime:8,content:`<h2>优雅解决跨域</h2><p>跨域 (CORS) 是前端开发中常见的障碍。虽然可以在后端代码中处理，但在 Nginx 层面处理通常更统一、效率更高。</p><h3>配置示例</h3><pre>add_header 'Access-Control-Allow-Origin' '*';
+add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';</pre>`},{id:9,title:"Shell 脚本自动化备份指南",excerpt:"运维自动化的第一步。编写可维护的 Bash 脚本实现数据库定时异地备份。",date:"2023-12-05",category:"devops",tags:["Shell","自动化"],gradient:"linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)",author:"AIZO",readTime:25,content:"<h2>自动化脚本实战</h2><p>不要让手动操作成为你的负担。Bash 脚本可以通过 crontab 配合，实现全天候的自动化任务。</p><h3>备份逻辑</h3><ol><li>dump 数据库数据</li><li>压缩归档</li><li>计算 MD5</li><li>推送到 S3 或远端存储</li></ol><blockquote>“懒惰（以正确的方式）是程序员的美德。”</blockquote>"},{id:10,title:"Go 语言并发模式与实践",excerpt:"深度解析 Goroutine。如何利用 Channel 构建能够抗住百万 QPS 的高并发后端。",date:"2023-12-10",category:"backend",tags:["Go","并发"],gradient:"linear-gradient(135deg, #0ea5e9 0%, #0c4a6e 100%)",author:"AIZO",readTime:18,content:`<h2>Go 的并发哲学</h2><p>Go 提供了一种全新的并发模型：CSP (Communicating Sequential Processes)。</p><h3>Goroutine 是什么？</h3><p>它是由 Go 运行时管理的轻量级线程。启动一个 goroutine 的成本极低，这让我们可以在一个程序中运行数万个并发任务。</p><pre>func main() {
+  go someTask()
+  // ...
+}</pre>`},{id:11,title:"TypeScript 高级类型体操",excerpt:"探索 TS 的类型系统上限。如何利用映射类型和条件类型构建强壮的库接口。",date:"2023-12-15",category:"frontend",tags:["TS","进阶"],gradient:"linear-gradient(135deg, #3178c6 0%, #1e3a8a 100%)",author:"AIZO",readTime:15,content:`<h2>不仅仅是声明类型</h2><p>TypeScript 的类型系统是图灵完备的。这意味着你可以用类型编写复杂的逻辑。</p><h3>条件类型 (Conditional Types)</h3><pre>type IsString<T> = T extends string ? true : false;
+
+type A = IsString<string>; // true
+type B = IsString<number>; // false</pre>`},{id:12,title:"Redis 分布式锁的核心原理",excerpt:"在高并发场景下如何保证一致性？对比 Redlock 算法以及常见的锁实现方案。",date:"2023-12-20",category:"backend",tags:["Redis","锁"],gradient:"linear-gradient(135deg, #ef4444 0%, #7f1d1d 100%)",author:"AIZO",readTime:16,content:"<h2>分布式环境的锁</h2><p>在单机环境下，我们可以用 Mutex。但在分布式架构中，我们需要一个中心化的协调者，Redis 往往是最佳选择。</p><h3>SETNX 命令</h3><p>这是分布式锁的基础。<code>SET lock_key resource_id NX PX 30000</code> 这一条命令完美解决了互斥性和超时自动释放的问题。</p>"}];export{t as a,e as c};
